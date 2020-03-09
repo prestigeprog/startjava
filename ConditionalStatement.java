@@ -1,39 +1,30 @@
 public class ConditionalStatement {	
     public static void main(String[] args) {
-        int age = 24;
-        
+        int age = 24; 
         if (age > 20) {
         	System.out.println("more than 20");
         }
-
-
-        boolean isHeManOrWoman = true;
-       
-        if (isHeManOrWoman == true) {
+        boolean isMale = true;
+        if (isMale) {
         	System.out.println("man");
         }
-        if (isHeManOrWoman == false) {
+        if (!isMale) {
         	System.out.println("woman");
         }
-
-
-         double height = 1.92d;
-
+        double height = 1.92d;
         if ( height < 1.80) {
         	System.out.println("gnome");
-        } else
+        } else {
         	System.out.println("giant");
-		
-
-
+        }
 		String name = "sergo";
-
         if (name.startsWith("m")) {
         	System.out.println("name starts with M");
         } else if (name.startsWith("i")) {
         	System.out.println("name starts with I");
-        } else
+        } else{
         	System.out.println("not I and M");
+        }
 
-    }
+	}
 }

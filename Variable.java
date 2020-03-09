@@ -1,23 +1,21 @@
 public class Variable {	
     public static void main(String[] args) {
-        byte boobsSize = 3;
-        short lentgh = 9;
-        int feetSize = 30;
-        long heigth = 77;
-        float fork = 2.3f;
-        double diameter = 4.5d;
+        byte cores = 8;
+        short threads = 8;
+        int romSlots = 4;
+        long romVideo = 8;
+        float audioCard = 7.1f;
+        double diameterOfMotherboard = 4.5d;
         char bestLetter = 's';
-        boolean isTrue = true;
-        
-        	System.out.println(boobsSize);
-        	System.out.println(lentgh);
-			System.out.println(feetSize);
-        	System.out.println(heigth);
-        	System.out.println(fork);
-        	System.out.println(diameter);
-        	System.out.println(bestLetter);
-        	System.out.println(isTrue);
-
-
-    }
+        boolean isTrue = true;  
+        System.out.println(cores);
+        System.out.println(threads);
+		System.out.println(romSlots);
+        System.out.println(romVideo);
+        System.out.println(audioCard);
+        System.out.println(diameterOfMotherboard);
+        System.out.println(bestLetter);
+        System.out.println(isTrue);
+	}
 }
+
