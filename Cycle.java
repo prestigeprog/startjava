@@ -5,11 +5,13 @@ public class Cycle {
        	System.out.println(numbers1);
        	numbers1++;
        }
+
        int numbers2 = 6;
        while (numbers2 >= -6) {
        	System.out.println(numbers2);
        	numbers2 = numbers2 - 2;
        }
+       
        int numbers3 = 10;
        int temp = 0;
        do {
