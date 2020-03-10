@@ -8,6 +8,7 @@ public class Variable {
         double diameterOfMotherboard = 4.5d;
         char chipset = 'x';
         boolean isPcOverclocked = true;  
+        
         System.out.println(cores);
         System.out.println(threads);
 		System.out.println(romSlots);
