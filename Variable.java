@@ -6,16 +6,16 @@ public class Variable {
         long romVideo = 8;
         float audioCard = 7.1f;
         double diameterOfMotherboard = 4.5d;
-        char bestLetter = 's';
-        boolean isTrue = true;  
+        char chipset = 'x';
+        boolean isPcOverclocked = true;  
         System.out.println(cores);
         System.out.println(threads);
 		System.out.println(romSlots);
         System.out.println(romVideo);
         System.out.println(audioCard);
         System.out.println(diameterOfMotherboard);
-        System.out.println(bestLetter);
-        System.out.println(isTrue);
+        System.out.println(chipset);
+        System.out.println(isPcOverclocked);
 	}
 }
 
