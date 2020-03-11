@@ -21,8 +21,13 @@ public class Calculator {
        		System.out.println(firstNum/secondNum);
        } else if (action.contains("%")) {
        		System.out.println(firstNum%secondNum);
+       } else if (action.contains("^")) {
+       	int temp = 1;
+       	for (int i = 0; i < secondNum; i++) {
+       		temp = temp*firstNum;
+       		}
+       		System.out.println(temp);
        }
-
 	}
 }
 
