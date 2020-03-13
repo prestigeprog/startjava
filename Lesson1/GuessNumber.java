@@ -9,11 +9,9 @@ public class GuessNumber {
         System.out.println("I wanna play a game with you...");
         int playerNumber = Integer.parseInt(reader.readLine());
 
-        while (true) {
+        while (pcNumber != playerNumber) {
             System.out.println("Guess the number!!!");
-            if (pcNumber == yourNumber) {
-                break;
-            } else if (yourNumber > pcNumber) {
+            if (playerNumber > pcNumber) {
                 System.out.println("Your number is greater than mine!");
             } else {
                 System.out.println("Your number is less than mine!");

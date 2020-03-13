@@ -26,7 +26,7 @@ public class Calculator {
             int score = 1;
             for (int i = 0; i < secondNum; i++) {
                 score *= firstNum;
-                }
+            }
             System.out.println(score);
         }
     }
