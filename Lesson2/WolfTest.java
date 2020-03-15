@@ -1,42 +1,22 @@
 public class WolfTest {
-    public static void main(String[] args) {
-        Wolf wolf1 = new Wolf();
-        wolf1.sex = 'm';
-        wolf1.name = "jacob";
-        wolf1.weight = 120;
-        wolf1.age = 23;
-        wolf1.color = "black";
+    public static void main(String[] args) throws Exception {
+        Wolf wolf = new Wolf();
+        wolf.sex = 'm';
+        wolf.name = "jacob";
+        wolf.weight = 120;
+        wolf.age = 23;
+        wolf.color = "black";
 
-        System.out.println(wolf1.sex);
-        System.out.println(wolf1.name);
-        System.out.println(wolf1.weight);
-        System.out.println(wolf1.age);
-        System.out.println(wolf1.color);
+        System.out.println(wolf.sex);
+        System.out.println(wolf.name);
+        System.out.println(wolf.weight);
+        System.out.println(wolf.age);
+        System.out.println(wolf.color);
 
-        wolf1.sit();
-        wolf1.run();
-        wolf1.howl();
-        wolf1.go();
-        wolf1.hunt();
+        wolf.sit();
+        wolf.run();
+        wolf.howl();
+        wolf.go();
+        wolf.hunt();
     }
 }
-class Wolf {   
-    char sex;
-    String name;
-    int weight;
-    int age;
-    String color;
-
-    void sit() {
-    }
-    void run() {
-    }
-    void howl() {
-    }
-    void go() {
-    }
-    void hunt() {
-    }
-
-}
-
