@@ -26,4 +26,32 @@ public class Calculator {
     public void setAction (String action) {
         this.action = action;
     }
+
+    public void doScore(int firstNum,String action,int secondNum) {
+
+        switch(action) {
+            case "+" :
+                System.out.println(firstNum + secondNum);
+                break;
+            case "-" :
+                System.out.println(firstNum - secondNum);
+                break;
+            case "*" :
+                System.out.println(firstNum * secondNum);
+                break;
+            case "/" :
+                System.out.println(firstNum / secondNum);
+                break;
+             case "%" :
+                System.out.println(firstNum % secondNum);
+                break;
+            case "^" :
+                int score = 1;
+                for (int i = 0; i < secondNum; i++) {
+                score *= firstNum;
+                }
+                System.out.println(score);
+                break;
+        }
+    }
 }
