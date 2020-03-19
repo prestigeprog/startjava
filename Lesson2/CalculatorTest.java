@@ -16,13 +16,17 @@ public class CalculatorTest {
             calculator.setSecondNum(Integer.parseInt(reader.readLine()));
 
             calculator.doScore(calculator.getFirstNum(), calculator.getAction(), calculator.getSecondNum());
-
-            System.out.println("Again...?[y/n]");
-            String answer = reader.readLine();
+            String answer = "g";
+            while(!answer.equals("y") || !answer.equals("n")) {
+                System.out.println("Again...?[y/n]");
+                String answer1 = reader.readLine();
+                answer = answer1;
+            }
+            
             if (answer.equals("y")) {
                 System.out.println("Continue!");
             } else if (answer.equals("n")) {
-                break;
+                    break; 
             }
         }
     }
