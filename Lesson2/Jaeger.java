@@ -1,22 +1,84 @@
 public class Jaeger {
     private String modelName;
-    private String mark;
-    private String origin;
-    private float height;
-    private float weight;
-    private int speed;
-    private int strength;
-    private int armor;
 
     public String getModelName() {
         return modelName;
     }
 
     void setModelName(String modelName) {
-        if (modelName == "") {
-            System.out.println("No symbols");
-        }
         this.modelName = modelName;
+    }
+
+    private String mark;
+
+    public String getMark() {
+        return mark;
+    }
+
+    void setMark(String mark) {
+        this.mark = mark;
+    }
+
+    private String origin;
+
+    public String getOrigin() {
+        return origin;
+    }
+
+    void setOrigin(String origin) {
+        this.origin = origin;
+    }
+
+    private float height;
+
+    public float getHeight() {
+        return height;
+    }
+
+    void setHeight(float height) {
+        this.height = height;
+    } 
+
+    private float weight;
+
+    public float getWeight() {
+        return weight;
+    }
+
+    void setWeight(float weight) {
+        this.weight = weight;
+    }
+
+
+    private int speed;
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+
+    private int strength;
+
+    public int getStrength() {
+        return strength;
+    }
+
+    void setStrength(int strength) {
+        this.strength = strength;
+    }
+
+    private int armor;
+
+    public int getArmor() {
+        return armor;
+    }
+
+    void setArmor(int armor) {
+        this.armor = armor;
     }
 
     public boolean drift() {

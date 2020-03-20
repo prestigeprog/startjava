@@ -5,8 +5,8 @@ import java.io.InputStreamReader;
 public class CalculatorTest {
     public static void main (String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        
-        while(true){
+        String answer;
+        do {
             Calculator calculator = new Calculator();
             System.out.println("Enter Furst num");
             calculator.setFirstNum(Integer.parseInt(reader.readLine()));
@@ -15,26 +15,11 @@ public class CalculatorTest {
             System.out.println("Enter Second num");
             calculator.setSecondNum(Integer.parseInt(reader.readLine()));
 
-            calculator.doScore(calculator.getFirstNum(), calculator.getAction(), calculator.getSecondNum());
-            String answer;
-
-            while(true) {
+            calculator.calculate(calculator.getFirstNum(), calculator.getAction(), calculator.getSecondNum());
+            do {
                 System.out.println("Again...?[y/n]");
-                String answer1 = reader.readLine();
-                if (answer1.equals("y")) {
-                    answer = answer1;
-                    break;
-                } else if (answer1.equals("n")) {
-                    answer = answer1;
-                    break; 
-                }
-            }
-            
-            if (answer.equals("y")) {
-                System.out.println("Continue!");
-            } else if (answer.equals("n")) {
-                    break; 
-            }
-        }
+                answer = reader.readLine();
+            } while (!(answer.equals("y")) || !(answer.equals("n")));
+        }while (!answer.equals("n"));
     }
 }
