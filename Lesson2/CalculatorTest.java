@@ -15,11 +15,11 @@ public class CalculatorTest {
             System.out.println("Enter Second num");
             calculator.setSecondNum(Integer.parseInt(reader.readLine()));
 
-            calculator.calculate(calculator.getFirstNum(), calculator.getAction(), calculator.getSecondNum());
+            calculator.calculate();
             do {
                 System.out.println("Again...?[y/n]");
                 answer = reader.readLine();
-            } while (!(answer.equals("y")) || !(answer.equals("n")));
+            } while (!(answer.equals("y")) && !(answer.equals("n")));
         }while (!answer.equals("n"));
     }
 }

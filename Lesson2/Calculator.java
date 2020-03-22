@@ -31,7 +31,7 @@ public class Calculator {
 
 
 
-    public void calculate(int firstNum,String action,int secondNum) {
+    public void calculate() {
         switch(action) {
             case "+" :
                 System.out.println(firstNum + secondNum);
