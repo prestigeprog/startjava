@@ -19,7 +19,7 @@ public class CalculatorTest {
             do {
                 System.out.println("Again...?[y/n]");
                 answer = reader.readLine();
-            } while (!(answer.equals("y")) && !(answer.equals("n")));
+            } while (!answer.equals("y") && !answer.equals("n"));
         }while (!answer.equals("n"));
     }
 }

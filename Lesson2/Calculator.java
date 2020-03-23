@@ -1,35 +1,31 @@
 public class Calculator {   
     private int firstNum;
+    private String action;
+    private int secondNum;
 
-    public int getFirstNum () {
+    public int getFirstNum() {
         return firstNum;
     }
 
-    public void setFirstNum (int firstNum) {
+    public void setFirstNum(int firstNum) {
         this.firstNum = firstNum;
     }
 
-    private String action;
-
-    public String getAction () {
+    public String getAction() {
         return action;
     }
 
-    public void setAction (String action) {
+    public void setAction(String action) {
         this.action = action;
     }
 
-    private int secondNum;
-
-    public int getSecondNum () {
+    public int getSecondNum() {
         return secondNum;
     }
 
-    public void setSecondNum (int secondNum) {
+    public void setSecondNum(int secondNum) {
         this.secondNum = secondNum;
     }
-
-
 
     public void calculate() {
         switch(action) {

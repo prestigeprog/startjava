@@ -1,5 +1,12 @@
 public class Jaeger {
     private String modelName;
+    private String mark;
+    private String origin;
+    private float height;
+    private float weight;
+    private int speed;
+    private int strength;
+    private int armor;
 
     public String getModelName() {
         return modelName;
@@ -9,8 +16,6 @@ public class Jaeger {
         this.modelName = modelName;
     }
 
-    private String mark;
-
     public String getMark() {
         return mark;
     }
@@ -18,8 +23,6 @@ public class Jaeger {
     void setMark(String mark) {
         this.mark = mark;
     }
-
-    private String origin;
 
     public String getOrigin() {
         return origin;
@@ -29,8 +32,6 @@ public class Jaeger {
         this.origin = origin;
     }
 
-    private float height;
-
     public float getHeight() {
         return height;
     }
@@ -38,8 +39,6 @@ public class Jaeger {
     void setHeight(float height) {
         this.height = height;
     } 
-
-    private float weight;
 
     public float getWeight() {
         return weight;
@@ -49,9 +48,6 @@ public class Jaeger {
         this.weight = weight;
     }
 
-
-    private int speed;
-
     public int getSpeed() {
         return speed;
     }
@@ -60,9 +56,6 @@ public class Jaeger {
         this.speed = speed;
     }
 
-
-    private int strength;
-
     public int getStrength() {
         return strength;
     }
@@ -70,8 +63,6 @@ public class Jaeger {
     void setStrength(int strength) {
         this.strength = strength;
     }
-
-    private int armor;
 
     public int getArmor() {
         return armor;
@@ -95,5 +86,16 @@ public class Jaeger {
     }
 
     public void useVortexCannon() {
+    }
+
+    public Jaeger(String modelName, String mark, String origin, float height, float weight, int speed, int strength, int armor) {
+    this.modelName = modelName;
+    this.mark = mark;
+    this.origin = origin;
+    this.height = height;
+    this.weight = weight;
+    this.speed = speed;
+    this.strength = strength;
+    this.armor = armor;
     }
 }
