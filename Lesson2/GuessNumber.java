@@ -16,7 +16,7 @@ public class GuessNumber {
             } else {
                 System.out.println("Player's two number is greater than mine!");
             }
-            if (number1 == pcNumber && number2 == pcNumber) {
+            if (number1 == pcNumber || number2 == pcNumber) {
             System.out.println("WOW!!! We got winner!");
             System.out.println(number1 + " - is Player's one number!");
             System.out.println(number2 + " - is Player's two number!");
