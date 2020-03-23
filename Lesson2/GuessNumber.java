@@ -29,5 +29,5 @@ public class GuessNumber {
         System.out.println(player1.getNumber() + " - is Player's one number!");
         System.out.println(player2.getNumber() + " - is Player's two number!");
         System.out.println(pcNumber + " - is guessed number!!! Congratulations to the winner!!!");
-}
+    }
 }
