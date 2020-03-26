@@ -14,7 +14,7 @@ public class GuessNumber {
     public void gameLauncher() throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int pcNumber = (int) (Math.random() * 101);
-        while (player1.getNumber() == pcNumber || player2.getNumber() == pcNumber) {
+        while (player1.getNumber() != pcNumber && player2.getNumber() != pcNumber) {
             System.out.println("Guess the number, player one!!!");
             player1.setNumber(Integer.parseInt(reader.readLine()));
             System.out.println("Guess the number, player two!!!");
@@ -29,11 +29,11 @@ public class GuessNumber {
                 System.out.println("Player's two number is less than mine!");
             } else {
                 System.out.println("Player's two number is greater than mine!");
-            }
-            System.out.println("WOW!!! We got winner!");
-            System.out.println(player1.getNumber() + " - is Player's one number!");
-            System.out.println(player2.getNumber() + " - is Player's two number!");
-            System.out.println(pcNumber + " - is guessed number!!! Congratulations to the winner!!!");
+            } 
         }
+        System.out.println("WOW!!! We got winner!");
+        System.out.println(player1.getNumber() + " - is Player's one number!");
+        System.out.println(player2.getNumber() + " - is Player's two number!");
+        System.out.println(pcNumber + " - is guessed number!!! Congratulations to the winner!!!");
     }
 }
