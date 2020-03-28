@@ -12,7 +12,7 @@ public class GuessNumberTest {
         GuessNumber game = new GuessNumber(player1, player2);
         String answer;
         do {
-            game.gameLauncher();
+            game.launchGame();
             do {
                 System.out.println("Again...?[y/n]");
                 answer = reader.readLine();
