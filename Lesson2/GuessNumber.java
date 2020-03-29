@@ -20,21 +20,22 @@ public class GuessNumber {
             System.out.println("Guess the number, player two!!!");
             player2.setNumber(Integer.parseInt(reader.readLine()));
         
-            if (player1.getNumber() > secretNumber) {
-                System.out.println("Player's one number is greater than mine!");
+            if (player1.getNumber() == secretNumber) {
+                System.out.println("Player's one number is correct!");
+                break;
             } else if (player1.getNumber() < secretNumber) {
                 System.out.println("Player's one number is less than mine!");
             } else {
-                System.out.println("Player's one number is correct!");
-                break;
+                System.out.println("Player's one number is greater than mine!");
             }
-            if (player2.getNumber() > secretNumber) {
-                System.out.println("Player's two number is greater than mine!");
+
+            if (player2.getNumber() == secretNumber) {
+                System.out.println("Player's two number is correct!");
+                break;
             } else if (player2.getNumber() < secretNumber) {
                 System.out.println("Player's two number is less than mine!");
             } else {
-                System.out.println("Player's two number is less than mine!");
-                break;
+                System.out.println("Player's two number is greater than mine!");
             }
         } while(true);
     }
