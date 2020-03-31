@@ -1,3 +1,5 @@
+package com.startjava.lesson1.cycle;
+
 public class Cycle {	
     public static void main(String[] args) {
         for (int i = 0; i <= 20; i++) {
@@ -10,14 +12,14 @@ public class Cycle {
             counter -= 2;
         }
        
-        int counter = 10;
+        counter = 10;
         int result = 0;
         do {
-            if (numbers2 % 2 != 0) {
+            if (counter % 2 != 0) {
                 result += counter;
             } 
-            numbers2++;
-        } while (numbers2 <= 20);
+            counter++;
+        } while (counter <= 20);
             System.out.println(result);
     }
 }
