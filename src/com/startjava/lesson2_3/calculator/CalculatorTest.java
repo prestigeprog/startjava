@@ -1,7 +1,6 @@
-package com.startjava.lesson2.calculator;
+package com.startjava.lesson2_3.calculator;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class CalculatorTest {
@@ -10,7 +9,7 @@ public class CalculatorTest {
         String answer;
         do {
             Calculator calculator = new Calculator();
-            System.out.println("Enter Furst num");
+            System.out.println("Enter First num");
             calculator.setFirstNum(Integer.parseInt(reader.readLine()));
             System.out.println("What we need to do?");
             calculator.setAction(reader.readLine());
