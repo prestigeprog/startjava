@@ -3,32 +3,31 @@ package com.startjava.lesson4.calculator;
 public class Calculator {
     private String mathOperation;
 
-    public Calculator(String mathOperation) {
+    public String calculate(String mathOperation) {
         this.mathOperation = mathOperation;
-    }
-
-    public void calculate() {
-        String[] arrSplit = mathOperation.split(" ", 3);
-        int firstNum = Integer.parseInt(arrSplit[0]);
-        int secondNum = Integer.parseInt(arrSplit[2]);
-        switch(arrSplit[1]) {
+        String[] splitMathOperation = mathOperation.split(" ");
+        int firstNum = Integer.parseInt(splitMathOperation[0]);
+        int secondNum = Integer.parseInt(splitMathOperation[2]);
+        switch(splitMathOperation[1]) {
             case "+" :
                 System.out.println(firstNum + secondNum);
-                break;
+                return  Integer.toString(firstNum + secondNum);
             case "-" :
                 System.out.println(firstNum - secondNum);
-                break;
+                return Integer.toString(firstNum - secondNum);
             case "*" :
                 System.out.println(firstNum * secondNum);
-                break;
+                return Integer.toString(firstNum * secondNum);
             case "/" :
                 System.out.println(firstNum / secondNum);
-                break;
-             case "%" :
+                return Integer.toString(firstNum / secondNum);
+            case "%" :
                 System.out.println(firstNum % secondNum);
-                break;
+                 return Integer.toString(firstNum % secondNum);
             case "^" :
                 System.out.println(Math.pow(firstNum, secondNum));
+                return Double.toString(Math.pow(firstNum, secondNum));
         }
+        return " ";
     }
 }

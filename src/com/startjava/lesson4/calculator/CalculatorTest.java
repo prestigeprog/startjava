@@ -8,9 +8,9 @@ public class CalculatorTest {
         String answer;
         do {
             System.out.println("Введите математическое выражение: ");
-            Calculator calculator = new Calculator(scanner.nextLine());
+            Calculator calculator = new Calculator();
 
-            calculator.calculate();
+            calculator.calculate(scanner.nextLine());
             do {
                 System.out.println("Again...?[y/n]");
                 answer = scanner.nextLine();
