@@ -8,10 +8,10 @@ public class Calculator {
     }
 
     public void calculate() {
-        String[] arrSplit = mathOperation.split("", 5);
+        String[] arrSplit = mathOperation.split(" ", 3);
         int firstNum = Integer.parseInt(arrSplit[0]);
-        int secondNum = Integer.parseInt(arrSplit[4]);
-        switch(arrSplit[2]) {
+        int secondNum = Integer.parseInt(arrSplit[2]);
+        switch(arrSplit[1]) {
             case "+" :
                 System.out.println(firstNum + secondNum);
                 break;
