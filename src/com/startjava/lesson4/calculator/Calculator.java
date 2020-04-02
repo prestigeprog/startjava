@@ -1,7 +1,11 @@
 package com.startjava.lesson4.calculator;
 
 public class Calculator {
-    private String mathOperation = "1 x 2";
+    private String mathOperation;
+
+    public Calculator(String mathOperation) {
+        this.mathOperation = mathOperation;
+    }
 
     public String getMathOperation() {
         return mathOperation;
@@ -10,13 +14,15 @@ public class Calculator {
         this.mathOperation = mathOperation;
     }
 
-    private String[] arrOfMathOperation = mathOperation.split(" ", 3);
+     String[] arrSplit = mathOperation.split("");
 
-    private int firstNum = Integer.parseInt(arrOfMathOperation[0]);
-    private int secondNum = Integer.parseInt(arrOfMathOperation[2]);
+
+
+    private int firstNum = Integer.parseInt(arrSplit[0]);
+    private int secondNum = Integer.parseInt(arrSplit[2]);
 
     public void calculate() {
-        switch(arrOfMathOperation[1]) {
+        switch(arrSplit[1]) {
             case "+" :
                 System.out.println(firstNum + secondNum);
                 break;

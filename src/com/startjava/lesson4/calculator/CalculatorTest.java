@@ -1,21 +1,19 @@
 package com.startjava.lesson4.calculator;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class CalculatorTest {
     public static void main (String[] args) throws Exception {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        Scanner scanner = new Scanner(System.in);
         String answer;
         do {
-            Calculator calculator = new Calculator();
             System.out.println("Введите математическое выражение: ");
-            calculator.setMathOperation(reader.readLine());
+            Calculator calculator = new Calculator(scanner.nextLine());
 
             calculator.calculate();
             do {
                 System.out.println("Again...?[y/n]");
-                answer = reader.readLine();
+                answer = scanner.nextLine();
             } while (!answer.equals("y") && !answer.equals("n"));
         }while (!answer.equals("n"));
     }
