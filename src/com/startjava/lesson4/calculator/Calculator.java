@@ -8,7 +8,7 @@ public class Calculator {
     }
 
     public void calculate() {
-        String[] arrSplit = mathOperation.split("",5);
+        String[] arrSplit = mathOperation.split(" ", 5);
         int firstNum = Integer.parseInt(arrSplit[0]);
         int secondNum = Integer.parseInt(arrSplit[4]);
         switch(arrSplit[2]) {
