@@ -7,22 +7,11 @@ public class Calculator {
         this.mathOperation = mathOperation;
     }
 
-    public String getMathOperation() {
-        return mathOperation;
-    }
-    public void setMathOperation(String mathOperation) {
-        this.mathOperation = mathOperation;
-    }
-
-     String[] arrSplit = mathOperation.split("");
-
-
-
-    private int firstNum = Integer.parseInt(arrSplit[0]);
-    private int secondNum = Integer.parseInt(arrSplit[2]);
-
     public void calculate() {
-        switch(arrSplit[1]) {
+        String[] arrSplit = mathOperation.split("",5);
+        int firstNum = Integer.parseInt(arrSplit[0]);
+        int secondNum = Integer.parseInt(arrSplit[4]);
+        switch(arrSplit[2]) {
             case "+" :
                 System.out.println(firstNum + secondNum);
                 break;
