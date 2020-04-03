@@ -8,24 +8,18 @@ public class Calculator {
         String[] splitMathOperation = mathOperation.split(" ");
         int firstNum = Integer.parseInt(splitMathOperation[0]);
         int secondNum = Integer.parseInt(splitMathOperation[2]);
-        switch(splitMathOperation[1]) {
-            case "+" :
-                System.out.println(firstNum + secondNum);
-                return  Integer.toString(firstNum + secondNum);
-            case "-" :
-                System.out.println(firstNum - secondNum);
+        switch (splitMathOperation[1]) {
+            case "+":
+                return Integer.toString(firstNum + secondNum);
+            case "-":
                 return Integer.toString(firstNum - secondNum);
-            case "*" :
-                System.out.println(firstNum * secondNum);
+            case "*":
                 return Integer.toString(firstNum * secondNum);
-            case "/" :
-                System.out.println(firstNum / secondNum);
+            case "/":
                 return Integer.toString(firstNum / secondNum);
-            case "%" :
-                System.out.println(firstNum % secondNum);
-                 return Integer.toString(firstNum % secondNum);
-            case "^" :
-                System.out.println(Math.pow(firstNum, secondNum));
+            case "%":
+                return Integer.toString(firstNum % secondNum);
+            case "^":
                 return Double.toString(Math.pow(firstNum, secondNum));
         }
         return " ";
