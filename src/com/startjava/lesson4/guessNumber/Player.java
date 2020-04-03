@@ -4,8 +4,9 @@ public class Player {
     private String name;
     private int[] numbers;
 
-    public Player(String name) {
+    public Player(String name, int[] numbers) {
         this.name = name;
+        this.numbers = numbers;
     }
 
     void add(int attemptCount, int number) {
@@ -22,5 +23,9 @@ public class Player {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int[] getNumbers() {
+        return numbers;
     }
 }

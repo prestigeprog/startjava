@@ -34,6 +34,7 @@ public class GuessNumber {
         } while (attemptsCount < 10);
         if (attemptsCount >= 10) {
             System.out.println("Игроки исчерпали лимит попыток!");
+            System.out.println("Загаданное число: "+ secretNumber);
         }
     }
 }

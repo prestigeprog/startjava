@@ -7,9 +7,9 @@ public class GuessNumberTest {
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Первый игрок, добро пожаловать! Назови свое имя!");
-        Player player1 = new Player(reader.readLine());
+        Player player1 = new Player(reader.readLine(), new int[10]);
         System.out.println("Второй игрок, добро пожаловать! Назови свое имя!");
-        Player player2 = new Player(reader.readLine());
+        Player player2 = new Player(reader.readLine(), new int[10]);
         GuessNumber game = new GuessNumber(player1, player2);
         String answer;
         do {
