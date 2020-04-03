@@ -6,34 +6,50 @@ import java.io.InputStreamReader;
 public class GuessNumber {
     Player player1;
     Player player2;
+    private int attemptsCount = 10;
 
     GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
         this.player2 = player2;
+        this.player1.setAttempts(attemptsCount);
+        this.player2.setAttempts(attemptsCount);
     }
 
     public void launchGame() throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int secretNumber = (int) (Math.random() * 101);
-        int attemptsCount = 0;
-        do {
+        int attempt;
+        for(attempt = 0; attempt < attemptsCount; attempt++){
             System.out.println("Загадывай число " + player1.getName() + " !!!");
-            player1.add(attemptsCount, Integer.parseInt(reader.readLine()));
+            int p1Num = Integer.parseInt(reader.readLine());
+            if(p1Num != secretNumber)
+                player1.add(attempt, p1Num);
+            else{
+                System.out.println("Угадал " + player1.getName() + " c " + attempt + " попытки!!!");
+                break;
+            }
+            
             System.out.println("Загадывай число " + player2.getName() + " !!!");
-            player2.add(attemptsCount, Integer.parseInt(reader.readLine()));
-            if (player1.getBack(attemptsCount) == secretNumber) {
-                System.out.println("Угадал " + player1.getName() + " c " + attemptsCount + " попытки!!!");
-                break;
+            int p2Num = Integer.parseInt(reader.readLine());
+            if(p2Num != secretNumber)
+                player2.add(attempt, p2Num);
+            else{
+             System.out.println("Угадал " + player1.getName() + " c " + attempt + " попытки!!!");
+                break;   
             }
-
-            if (player2.getBack(attemptsCount) == secretNumber) {
-                System.out.println("Угадал " + player2.getName() + " c " + attemptsCount + " попытки!!!");
-                break;
-            }
-            attemptsCount++;
-        } while (attemptsCount < 10);
-        if (attemptsCount >= 10) {
+        }
+        if (attempt >= 10) {
             System.out.println("Игроки исчерпали лимит попыток!");
+            System.out.println("Попытки игрока " + player1.getName() + ":");
+            int[] tmp = player1.getNumbers();
+            for(int i = 0; i < attemptsCount; i++){
+                System.out.print(tmp[i] + " ");
+            }
+            System.out.println("Попытки игрока " + player2.getName() + ":");
+            tmp = player2.getNumbers();
+            for(int i = 0; i < attemptsCount; i++){
+                System.out.print(tmp[i] + " ");
+            }
         }
     }
 }
