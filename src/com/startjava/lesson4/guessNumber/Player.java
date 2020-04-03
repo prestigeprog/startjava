@@ -30,16 +30,4 @@ public class Player {
     public int getAttempts() {
         return attempts;
     }
-
-    public void setAttempts(int attempt) {
-        this.attempts = attempts;
-    }
-
-    public int[] getNumbers() {
-        return numbers;
-    }
-
-    public void setNumbers(int[] numbers) {
-        this.numbers = numbers;
-    }
 }

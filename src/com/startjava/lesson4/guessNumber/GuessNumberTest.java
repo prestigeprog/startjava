@@ -13,6 +13,7 @@ public class GuessNumberTest {
         GuessNumber game = new GuessNumber(player1, player2);
         String answer;
         do {
+            System.out.println("У вас 10 попыток, игроки!");
             game.launchGame();
             do {
                 System.out.println("Again...?[y/n]");
