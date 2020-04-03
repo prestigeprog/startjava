@@ -31,8 +31,8 @@ public class GuessNumber {
                 break;
             }
             attemptsCount++;
-        } while (attemptsCount < player1.getAttempts());
-        if (attemptsCount >= player1.getAttempts()) {
+        } while (attemptsCount < 10);
+        if (attemptsCount >= 10) {
             System.out.println("Игроки исчерпали лимит попыток!");
         }
     }
