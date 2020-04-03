@@ -2,11 +2,21 @@ package com.startjava.lesson4.guessNumber;
 
 public class Player {
     private String name;
-    private int number;
-    private int[] numbers = new int[10];
+    private int attempts;
+    private int[] numbers;
 
-    public Player(String name) {
+    void add(int attemptCount, int number) {
+        numbers[attemptCount] = number;
+    }
+
+    int getBack(int attemptCount) {
+        return numbers[attemptCount];
+    }
+
+
+    public Player(String name, int attempts) {
         this.name = name;
+        this.attempts = attempts;
     }
 
     public String getName() {
@@ -17,12 +27,12 @@ public class Player {
         this.name = name;
     }
 
-    public int getNumber() {
-        return number;
+    public int getAttempts() {
+        return attempts;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setAttempts(int attempt) {
+        this.attempts = attempts;
     }
 
     public int[] getNumbers() {

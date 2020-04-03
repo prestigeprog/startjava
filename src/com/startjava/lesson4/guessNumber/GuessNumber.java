@@ -15,30 +15,26 @@ public class GuessNumber {
     public void launchGame() throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int secretNumber = (int) (Math.random() * 101);
+        System.out.println("У вас 10 попыток, игроки!");
+        int attemptsCount = 0;
         do {
-            System.out.println("У вас 10 попыток, игроки!");
-            System.out.println("Загадывай число "+player1.getName()+" !!!");
-            player1.setNumber(Integer.parseInt(reader.readLine()));
-            System.out.println("Загадывай число "+player2.getName()+" !!!");
-            player2.setNumber(Integer.parseInt(reader.readLine()));
-        
-            if (player1.getNumber() == secretNumber) {
-                System.out.println("Player's one number is correct!");
+            System.out.println("Загадывай число " + player1.getName() + " !!!");
+            player1.add(attemptsCount, Integer.parseInt(reader.readLine()));
+            System.out.println("Загадывай число " + player2.getName() + " !!!");
+            player2.add(attemptsCount, Integer.parseInt(reader.readLine()));
+            if (player1.getBack(attemptsCount) == secretNumber) {
+                System.out.println("Угадал " + player1.getName() + " c " + attemptsCount + " попытки!!!");
                 break;
-            } else if (player1.getNumber() < secretNumber) {
-                System.out.println("Player's one number is less than mine!");
             } else {
-                System.out.println("Player's one number is greater than mine!");
+                attemptsCount++;
             }
 
-            if (player2.getNumber() == secretNumber) {
-                System.out.println("Player's two number is correct!");
+            if (player2.getBack(attemptsCount) == secretNumber) {
+                System.out.println("Угадал " + player2.getName() + " c " + attemptsCount + " попытки!!!");
                 break;
-            } else if (player2.getNumber() < secretNumber) {
-                System.out.println("Player's two number is less than mine!");
             } else {
-                System.out.println("Player's two number is greater than mine!");
+                attemptsCount++;
             }
-        } while(true);
+        } while (attemptsCount < player1.getAttempts());
     }
 }

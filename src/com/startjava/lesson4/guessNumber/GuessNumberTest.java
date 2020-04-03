@@ -6,10 +6,10 @@ import java.io.InputStreamReader;
 public class GuessNumberTest {
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("What is your name, player one?");
-        Player player1 = new Player(reader.readLine());
-        System.out.println("What is your name, player two?");
-        Player player2 = new Player(reader.readLine());
+        System.out.println("Первый игрок, добро пожаловать! Назови свое имя!");
+        Player player1 = new Player(reader.readLine(), 10);
+        System.out.println("Второй игрок, добро пожаловать! Назови свое имя!");
+        Player player2 = new Player(reader.readLine(), 10);
         GuessNumber game = new GuessNumber(player1, player2);
         String answer;
         do {
@@ -18,7 +18,7 @@ public class GuessNumberTest {
                 System.out.println("Again...?[y/n]");
                 answer = reader.readLine();
             } while (!answer.equals("y") && !answer.equals("n"));
-        }while (!answer.equals("n"));
+        } while (!answer.equals("n"));
     }
 }
 //сообщение 10 попыток вначале
