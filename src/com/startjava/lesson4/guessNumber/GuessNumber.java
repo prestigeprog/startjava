@@ -25,7 +25,7 @@ public class GuessNumber {
             if(p1Num != secretNumber)
                 player1.add(attempt, p1Num);
             else{
-                System.out.println("Угадал " + player1.getName() + " c " + attempt + " попытки!!!");
+                System.out.println("Игрок " + player1.getName() + " угадал число " + secretNumber + " с " + attempt + " попытки");
                 break;
             }
             System.out.println("Загадывай число " + player2.getName() + " !!!");
@@ -33,7 +33,7 @@ public class GuessNumber {
             if(p2Num != secretNumber)
                 player2.add(attempt, p2Num);
             else{
-             System.out.println("Угадал " + player1.getName() + " c " + attempt + " попытки!!!");
+             System.out.println("Игрок " + player2.getName() + " угадал число " + secretNumber + " с " + attempt + " попытки");
                 break;   
             }
         } 
