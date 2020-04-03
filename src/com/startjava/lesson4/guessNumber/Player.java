@@ -8,8 +8,8 @@ public class Player {
         this.name = name;
     }
 
-    void add(int attemptCount, int number) {
-        numbers[attemptCount] = number;
+    void add(int attempt, int number) {
+        numbers[attempt] = number;
     }
 
     int getBack(int attemptCount) {
@@ -23,4 +23,13 @@ public class Player {
     public void setName(String name) {
         this.name = name;
     }
+    
+    public void setAttempts(int attemptsCount){
+        numbers = new int[attemptsCount];
+    }
+    
+    public int[] getNumbers(){
+        return numbers;
+    }
+    
 }
