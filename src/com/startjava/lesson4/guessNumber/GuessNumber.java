@@ -2,6 +2,7 @@ package com.startjava.lesson4.guessNumber;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 public class GuessNumber {
     Player player1;
@@ -50,6 +51,11 @@ public class GuessNumber {
             for(int i = 0; i < attemptsCount; i++){
                 System.out.print(tmp[i] + " ");
             }
+            System.out.println(" ");
+        }
+        for (int i = 0; i < attempt; i++) {
+            Arrays.fill(player1.getNumbers(), i);
+            Arrays.fill(player2.getNumbers(), i);
         }
     }
 }
