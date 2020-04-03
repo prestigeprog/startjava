@@ -3,6 +3,7 @@ package com.startjava.lesson4.guessNumber;
 public class Player {
     private String name;
     private int[] numbers;
+    private int attempts;
 
     public Player(String name, int[] numbers) {
         this.name = name;
@@ -13,16 +14,12 @@ public class Player {
         numbers[attemptCount] = number;
     }
 
-    int getBack(int attemptCount) {
-        return numbers[attemptCount];
-    }
-
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAttempts(int attempts) {
+        this.attempts = attempts;
     }
 
     public int[] getNumbers() {
