@@ -61,7 +61,7 @@ public class GuessNumber {
     }
 
     public void clearAttempts() {
-    for (int i = 0; i < attempt; i++) {
+        for (int i = 0; i < attempt; i++) {
             Arrays.fill(player1.getNumbers(), i);
             Arrays.fill(player2.getNumbers(), i);
         }
