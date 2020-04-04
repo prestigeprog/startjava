@@ -2,12 +2,11 @@ package com.startjava.lesson4.guessNumber;
 
 public class Player {
     private String name;
-    private int[] numbers;
+    private int[] numbers = new int[10];
     private int attempts;
 
-    public Player(String name, int[] numbers) {
+    public Player(String name) {
         this.name = name;
-        this.numbers = numbers;
     }
 
     void add(int attemptCount, int number) {
