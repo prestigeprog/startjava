@@ -7,7 +7,6 @@ import java.util.Arrays;
 public class GuessNumber {
     private Player player1;
     private Player player2;
-    private int attemptsCount = 10;
     private int attempt = 0;
 
     GuessNumber(Player player1, Player player2) {
@@ -17,10 +16,8 @@ public class GuessNumber {
 
     public void launchGame() throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        player1.setAttempts(attemptsCount);
-        player2.setAttempts(attemptsCount);
         int secretNumber = (int) (Math.random() * 101);
-        for (attempt = 0; attempt < attemptsCount; attempt++) {
+        for (attempt = 0; attempt < player1.getAttemptCount(); attempt++) {
             System.out.println("Загадывай число " + player1.getName() + " !!!");
             int p1Num = Integer.parseInt(reader.readLine());
             if (p1Num != secretNumber) {
@@ -41,6 +38,7 @@ public class GuessNumber {
             }
         }
         checkAttempts();
+        clearAttempts();
     }
 
     public void checkAttempts() {
@@ -48,18 +46,17 @@ public class GuessNumber {
             System.out.println("Игроки исчерпали лимит попыток!");
             System.out.println("Попытки игрока " + player1.getName() + ":");
             int[] tmp = player1.copy();
-            for (int i = 0; i < attemptsCount; i++) {
+            for (int i = 0; i < player1.getAttemptCount(); i++) {
                 System.out.print(tmp[i] + " ");
             }
             System.out.println("");
             System.out.println("Попытки игрока " + player2.getName() + ":");
             tmp = player2.copy();
-            for (int i = 0; i < attemptsCount; i++) {
+            for (int i = 0; i < player1.getAttemptCount(); i++) {
                 System.out.print(tmp[i] + " ");
             }
             System.out.println("");
         }
-        clearAttempts();
     }
 
     public void clearAttempts() {

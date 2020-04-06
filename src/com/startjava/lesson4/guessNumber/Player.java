@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Player {
     private String name;
     private int[] numbers = new int[10];
-    private int attemptCount;
+    private int attemptCount = 10;
 
     public Player(String name) {
         this.name = name;
@@ -19,8 +19,12 @@ public class Player {
         return name;
     }
 
-    public void setAttempts(int attempts) {
-        this.attemptCount = attempts;
+    public void setAttemptCount(int attemptCount) {
+        this.attemptCount = attemptCount;
+    }
+
+    public int getAttemptCount() {
+        return attemptCount;
     }
 
     public int[] getNumbers() {
