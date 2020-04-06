@@ -24,40 +24,42 @@ public class GuessNumber {
             System.out.println("Загадывай число " + player1.getName() + " !!!");
             int p1Num = Integer.parseInt(reader.readLine());
             if (p1Num != secretNumber) {
-                player1.add(attempt, p1Num);
+                player1.setNumbers(attempt, p1Num);
             } else {
-                player1.add(attempt, p1Num);
+                player1.setNumbers(attempt, p1Num);
                 System.out.println("Игрок " + player1.getName() + " угадал число " + secretNumber + " с " + attempt + " попытки");
                 break;
             }
             System.out.println("Загадывай число " + player2.getName() + " !!!");
             int p2Num = Integer.parseInt(reader.readLine());
             if (p2Num != secretNumber) {
-                player2.add(attempt, p2Num);
+                player2.setNumbers(attempt, p2Num);
             } else {
-                player2.add(attempt, p2Num);
+                player2.setNumbers(attempt, p2Num);
                 System.out.println("Игрок " + player2.getName() + " угадал число " + secretNumber + " с " + attempt + " попытки");
                 break;
             }
         }
+        checkAttempts();
     }
 
     public void checkAttempts() {
         if (attempt >= 10) {
             System.out.println("Игроки исчерпали лимит попыток!");
             System.out.println("Попытки игрока " + player1.getName() + ":");
-            int[] tmp = player1.getNumbers();
+            int[] tmp = player1.copy();
             for (int i = 0; i < attemptsCount; i++) {
                 System.out.print(tmp[i] + " ");
             }
             System.out.println("");
             System.out.println("Попытки игрока " + player2.getName() + ":");
-            tmp = player2.getNumbers();
+            tmp = player2.copy();
             for (int i = 0; i < attemptsCount; i++) {
                 System.out.print(tmp[i] + " ");
             }
             System.out.println("");
         }
+        clearAttempts();
     }
 
     public void clearAttempts() {

@@ -15,8 +15,6 @@ public class GuessNumberTest {
         do {
             System.out.println("У вас 10 попыток, игроки!");
             game.launchGame();
-            game.checkAttempts();
-            game.clearAttempts();
             do {
                 System.out.println("Again...?[y/n]");
                 answer = reader.readLine();
