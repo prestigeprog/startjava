@@ -11,7 +11,7 @@ public class Player {
         this.name = name;
     }
 
-    void setNumbers(int attemptCount, int number) {
+    void setNumber(int attemptCount, int number) {
         numbers[attemptCount] = number;
     }
 
@@ -19,18 +19,11 @@ public class Player {
         return name;
     }
 
-    public void setAttemptCount(int attemptCount) {
-        this.attemptCount = attemptCount;
-    }
-
     public int getAttemptCount() {
         return attemptCount;
     }
 
     public int[] getNumbers() {
-        return numbers;
-    }
-    int[] copy() {
         int[] copyNumbers = Arrays.copyOf(numbers, 10);
         return copyNumbers;
     }
