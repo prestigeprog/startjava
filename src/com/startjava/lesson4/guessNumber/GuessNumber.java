@@ -7,7 +7,8 @@ import java.util.Arrays;
 public class GuessNumber {
     private Player player1;
     private Player player2;
-    private int attempt = 0;
+    private int attempt;
+    private int secretNumber;
 
     GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
@@ -16,29 +17,33 @@ public class GuessNumber {
 
     public void launchGame() throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int secretNumber = (int) (Math.random() * 101);
+        attempt = 0;
+        secretNumber = (int) (Math.random() * 101);
         for (attempt = 0; attempt < player1.getAttemptCount(); attempt++) {
             System.out.println("Загадывай число " + player1.getName() + " !!!");
             int p1Num = Integer.parseInt(reader.readLine());
-            if (p1Num != secretNumber) {
-                player1.setNumbers(attempt, p1Num);
-            } else {
-                player1.setNumbers(attempt, p1Num);
-                System.out.println("Игрок " + player1.getName() + " угадал число " + secretNumber + " с " + attempt + " попытки");
+            if (checkWinner(player1, p1Num) == true) {
                 break;
             }
             System.out.println("Загадывай число " + player2.getName() + " !!!");
             int p2Num = Integer.parseInt(reader.readLine());
-            if (p2Num != secretNumber) {
-                player2.setNumbers(attempt, p2Num);
-            } else {
-                player2.setNumbers(attempt, p2Num);
-                System.out.println("Игрок " + player2.getName() + " угадал число " + secretNumber + " с " + attempt + " попытки");
+            if (checkWinner(player2, p2Num) == true) {
                 break;
             }
         }
         checkAttempts();
         clearAttempts();
+    }
+
+    public boolean checkWinner(Player player, int pNum) {
+        if (pNum != secretNumber) {
+            player.setNumbers(attempt, pNum);
+            return false;
+        } else {
+            player.setNumbers(attempt, pNum);
+            System.out.println("Игрок " + player.getName() + " угадал число " + secretNumber + " с " + attempt + " попытки");
+            return true;
+        }
     }
 
     public void checkAttempts() {
