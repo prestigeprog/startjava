@@ -31,15 +31,17 @@ public class GuessNumber {
                 break;
             }
         }
-        printNumbers();
-        clearAttempts();
+        printNumbers(player1, attempt);
+        printNumbers(player2, attempt);
+        clearAttempts(player1,attempt);
+        clearAttempts(player2,attempt);
     }
 
     public boolean compareNumbers(Player player, int pNum) {
         if (pNum > secretNumber) {
             System.out.println("Игрок " + player.getName() + " загадал число большее чем моё!!!");
             return false;
-        } else if (pNum < secretNumber){
+        } else if (pNum < secretNumber) {
             System.out.println("Игрок " + player.getName() + " загадал число меньшее чем моё!!!");
             return false;
         } else if (pNum != secretNumber) {
@@ -52,26 +54,19 @@ public class GuessNumber {
         }
     }
 
-    public void printNumbers() {
+    public void printNumbers(Player player, int attempt) {
         if (attempt >= 10) {
-            System.out.println("Игроки исчерпали лимит попыток!");
-            System.out.println("Попытки игрока " + player1.getName() + ":");
-            int[] tmp = player1.getNumbers();
-            for (int i = 0; i < player1.getAttemptCount(); i++) {
-                System.out.print(tmp[i] + " ");
-            }
-            System.out.println("");
-            System.out.println("Попытки игрока " + player2.getName() + ":");
-            tmp = player2.getNumbers();
-            for (int i = 0; i < player1.getAttemptCount(); i++) {
-                System.out.print(tmp[i] + " ");
+            System.out.println("Игрок " + player.getName() + " исчерпал лимит попыток!");
+            System.out.println("Попытки игрока " + player.getName() + ":");
+            int[] finalNumbers = player.getNumbers();
+            for (int i = 0; i < player.getAttemptCount(); i++) {
+                System.out.print(finalNumbers[i] + " ");
             }
             System.out.println("");
         }
     }
 
-    public void clearAttempts() {
-        Arrays.fill(player1.getNumbers(), 10);
-        Arrays.fill(player2.getNumbers(), 10);
+    public void clearAttempts(Player player, int attempt) {
+        Arrays.fill(player.getNumbers(), attempt);
     }
 }
