@@ -33,24 +33,23 @@ public class GuessNumber {
         }
         printNumbers(player1, attempt);
         printNumbers(player2, attempt);
-        clearAttempts(player1,attempt);
-        clearAttempts(player2,attempt);
+        clearAttempts(player1, attempt);
+        clearAttempts(player2, attempt);
     }
 
     public boolean compareNumbers(Player player, int pNum) {
-        if (pNum > secretNumber) {
-            System.out.println("Игрок " + player.getName() + " загадал число большее чем моё!!!");
-            return false;
-        } else if (pNum < secretNumber) {
-            System.out.println("Игрок " + player.getName() + " загадал число меньшее чем моё!!!");
-            return false;
-        } else if (pNum != secretNumber) {
-            player.setNumber(attempt, pNum);
-            return false;
-        } else {
+        if (pNum == secretNumber) {
             player.setNumber(attempt, pNum);
             System.out.println("Игрок " + player.getName() + " угадал число " + secretNumber + " с " + attempt + " попытки");
             return true;
+        } else if (pNum > secretNumber) {
+            player.setNumber(attempt, pNum);
+            System.out.println("Игрок " + player.getName() + " загадал число большее чем моё!!!");
+            return false;
+        } else {
+            player.setNumber(attempt, pNum);
+            System.out.println("Игрок " + player.getName() + " загадал число меньшее чем моё!!!");
+            return false;
         }
     }
 
