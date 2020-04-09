@@ -1,10 +1,12 @@
 package com.startjava.lesson4.guessNumber;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
 public class GuessNumber {
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     private Player player1;
     private Player player2;
     private int attempt;
@@ -16,28 +18,25 @@ public class GuessNumber {
     }
 
     public void launchGame() throws Exception {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         attempt = 0;
         secretNumber = (int) (Math.random() * 101);
         for (attempt = 0; attempt < player1.getAttemptCount(); attempt++) {
-            System.out.println("Загадывай число " + player1.getName() + " !!!");
-            int p1Num = Integer.parseInt(reader.readLine());
-            if (compareNumbers(player1, p1Num) == true) {
+            if (compareNumbers(player1) == true) {
                 break;
             }
-            System.out.println("Загадывай число " + player2.getName() + " !!!");
-            int p2Num = Integer.parseInt(reader.readLine());
-            if (compareNumbers(player2, p2Num) == true) {
+            if (compareNumbers(player2) == true) {
                 break;
             }
         }
-        printNumbers(player1, attempt);
-        printNumbers(player2, attempt);
+        printNumbers(player1);
+        printNumbers(player2);
         clearAttempts(player1, attempt);
         clearAttempts(player2, attempt);
     }
 
-    public boolean compareNumbers(Player player, int pNum) {
+    public boolean compareNumbers(Player player) throws IOException {
+        System.out.println("Загадывай число " + player.getName() + " !!!");
+        int pNum = Integer.parseInt(reader.readLine());
         if (pNum == secretNumber) {
             player.setNumber(attempt, pNum);
             System.out.println("Игрок " + player.getName() + " угадал число " + secretNumber + " с " + attempt + " попытки");
@@ -53,16 +52,13 @@ public class GuessNumber {
         }
     }
 
-    public void printNumbers(Player player, int attempt) {
-        if (attempt >= 10) {
-            System.out.println("Игрок " + player.getName() + " исчерпал лимит попыток!");
-            System.out.println("Попытки игрока " + player.getName() + ":");
-            int[] finalNumbers = player.getNumbers();
-            for (int i = 0; i < player.getAttemptCount(); i++) {
-                System.out.print(finalNumbers[i] + " ");
-            }
-            System.out.println("");
+    public void printNumbers(Player player) {
+        System.out.println("Попытки игрока " + player.getName() + ":");
+        int[] finalNumbers = player.getNumbers();
+        for (int nums : finalNumbers) {
+            System.out.print(nums + " ");
         }
+        System.out.println("");
     }
 
     public void clearAttempts(Player player, int attempt) {
