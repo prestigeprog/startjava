@@ -8,5 +8,5 @@ height INTEGER,
 weight INTEGER,
 status TEXT,
 origin TEXT,
-launch TEXT,
-kaijuKill INTEGER);
+kaijuKill INTEGER,
+launch DATE);
